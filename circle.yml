@@ -9,12 +9,11 @@ dependencies:
   pre:
     - sudo apt-get update
     - python bootstrap.py --application-choice desktop --no-interactive:
-        pwd: comm-central/mozilla/default/python/mozboot/bin
+        pwd: comm-central/mozilla/python/mozboot/bin
 
 test:
   # The actual build happens here.
   pre:
-    - echo 
     - mach build:
         pwd: comm-central
 
