@@ -10,6 +10,8 @@ dependencies:
     - sudo apt-get update
     # This is not necessary and breaks bootstrap.py.
     - sudo apt-get remove cron
+    # Some packages that are not installed automatically, not via bootstrap.py.
+    - sudo apt-get install gconf2
     - python bootstrap.py --application-choice desktop --no-interactive:
         pwd: comm-central/mozilla/python/mozboot/bin
 
