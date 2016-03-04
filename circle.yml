@@ -8,6 +8,8 @@ checkout:
 dependencies:
   pre:
     - sudo apt-get update
+    # This is not necessary and breaks bootstrap.py.
+    - sudo apt-get remove cron
     - python bootstrap.py --application-choice desktop --no-interactive:
         pwd: comm-central/mozilla/python/mozboot/bin
 
