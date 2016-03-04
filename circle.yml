@@ -1,0 +1,23 @@
+checkout:
+  post:
+    - git clone --depth 1 https://github.com/instantbird/releases-comm-central.git comm-central
+    - git clone --depth 1 https://github.com/mozilla/gecko-dev.git comm-central/mozilla
+    - cp im/config/mozconfigs/linux/mozconfig .mozconfig:
+      pwd: comm-central
+
+dependencies:
+  pre:
+    - sudo apt-get update
+    - python bootstrap.py --application-choice desktop --no-interactive:
+      pwd: comm-central/mozilla/default/python/mozboot/bin
+
+test:
+  # The actual build happens here.
+  pre:
+    - echo 
+    - mach build:
+      pwd: comm-central
+
+  override:
+    - mach test:
+      pwd: comm-central
