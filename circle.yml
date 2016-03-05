@@ -20,9 +20,9 @@ dependencies:
 test:
   # The actual build happens here.
   pre:
-    - mach build:
+    - ./mozilla/mach build:
         pwd: comm-central
 
   override:
-    - mach test:
+    - ./mozilla/mach test:
         pwd: comm-central
