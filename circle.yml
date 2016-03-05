@@ -7,10 +7,13 @@ checkout:
 
 dependencies:
   pre:
+    # The VM is kind of in a weird state, so clean-up the packages.
     - sudo apt-get update
     - sudo apt-get autoclean
     - sudo apt-get clean
     - sudo apt-get autoremove
+    # This is not necessary and breaks bootstrap.py.
+    - sudo apt-get remove cron
     - python bootstrap.py --application-choice desktop --no-interactive:
         pwd: comm-central/mozilla/python/mozboot/bin
 
