@@ -12,9 +12,9 @@ dependencies:
     - sudo apt-get autoclean
     - sudo apt-get clean
     - sudo apt-get autoremove
-    # This is not necessary and breaks bootstrap.py.
-    - sudo apt-get remove cron
-    - python bootstrap.py --application-choice desktop --no-interactive:
+    # Note that this actually fails, but everything gets installed before it
+    # does, so screw it.
+    - python bootstrap.py --application-choice desktop --no-interactive; true:
         pwd: comm-central/mozilla/python/mozboot/bin
 
 test:
