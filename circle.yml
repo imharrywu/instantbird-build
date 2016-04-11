@@ -1,6 +1,6 @@
 checkout:
   post:
-    - git clone --depth 1 https://github.com/instantbird/releases-comm-central.git comm-central
+    - git clone --depth 1 https://github.com/mozilla/releases-comm-central.git comm-central
     - git clone --depth 1 https://github.com/mozilla/gecko-dev.git comm-central/mozilla
     - cp im/config/mozconfigs/linux/mozconfig .mozconfig:
         pwd: comm-central
