@@ -20,6 +20,8 @@ dependencies:
 test:
   # The actual build happens here.
   pre:
+    - ./mozilla/mach configure:
+        pwd: comm-central
     - ./mozilla/mach build:
         pwd: comm-central
 
